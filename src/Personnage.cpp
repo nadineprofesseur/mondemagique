@@ -32,6 +32,10 @@ string Personnage::exporter()
 	xml << "<Personnage><nom>"<< this->nom <<"</nom><age>"<<this->age<<"</age></Personnage>";
 	return xml.str();
 }
+void Personnage::ajouterArme(Arme * nouvelleArme)
+{
+	this->armesSecondaires.push_back(nouvelleArme);
+}
 
 
 } /* namespace MondeMagique */

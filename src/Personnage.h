@@ -8,6 +8,8 @@
 #ifndef PERSONNAGE_H_
 #define PERSONNAGE_H_
 #include <iostream>
+#include "Arme.h"
+#include <vector>
 using namespace std;
 
 namespace MondeMagique {
@@ -38,9 +40,23 @@ public:
 		this->nom = nom;
 	}
 
+	const Arme& getArme() const {
+		return arme;
+	}
+
+	void setArme(const Arme& arme) {
+		this->arme = arme;
+	}
+
+	void ajouterArme(Arme * nouvelleArme);
+
 protected:
 	string nom;
 	int age;
+	Arme arme;
+	vector<Arme *> armesSecondaires; // les listes utilisent des pointeurs pour pouvoir stocker des objets derives de taille differentes
+	// sinon l'objet stocke dans la liste sera cast… en objet parent (Arme) et perdra ses attributs derives - sa memoire supplementaire
+
 };
 
 } /* namespace MondeMagique */
