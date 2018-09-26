@@ -37,11 +37,27 @@ int main() {
 		getline(fichierPersonnages, ligne);
 		cout << "Ligne : " << ligne << endl;
 
-		int dernierePosition = 0;
-		int positionPointVirgule = ligne.find(";", dernierePosition); // find retourne la position du prochain ;
-		string valeur = ligne.substr(dernierePosition, positionPointVirgule); // substr prend la position de départ + le nombre de char
-		cout << "valeur:" << valeur;
+		//int trouvaille = ligne.find(";", 6);
+		//cout << "test trouvaille " << trouvaille;
 
+		unsigned int dernierePosition = 0;
+		int limite = 0;
+		do
+		{
+			limite++;
+			unsigned int positionPointVirgule = ligne.find(";", dernierePosition); // find retourne la position du prochain ;
+			cout << " positionPointVirgule : " << positionPointVirgule;
+			string valeur = ligne.substr(dernierePosition, positionPointVirgule - dernierePosition); // substr prend la position de départ + le nombre de char
+			cout << " position : " << positionPointVirgule;
+			cout << " valeur : " << valeur;
+			cout << " positionPointVirgule avant +1: " << positionPointVirgule;
+			dernierePosition = positionPointVirgule+1;
+			cout << " derniere position apres +1: " << dernierePosition;
+			cout << endl;
+		}
+		//while(ligne.length() > dernierePosition && dernierePosition < 1000 && limite < 10);
+		//while(string::npos != dernierePosition && limite < 10); // ne marche pas a cause de bug dans find()
+		while(0 != dernierePosition && limite < 10); // ne marche pas a cause de bug dans find()
 
 		cout << endl;
 	}
