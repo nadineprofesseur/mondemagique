@@ -6,6 +6,7 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
+#include <fstream>
 #include <iostream>
 #include "Personnage.h"
 #include "Magicien.h"
@@ -24,6 +25,13 @@ int main() {
 	Personnage* personnage; // instance du pointeur vers un objet personnage
 	personnage = new Magicien("Lolo", 100);
 	cout << personnage->exporter() << endl; // Quelle fonction ??? Magicien::exporter
+
+	ifstream fichierPersonnages;
+	fichierPersonnages.open("data/Personnages.csv");
+
+	string ligne;
+	getline(fichierPersonnages, ligne);
+	cout << "Première ligne : " << ligne;
 
 	return 0;
 }
