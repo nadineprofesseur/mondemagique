@@ -36,6 +36,11 @@ int main() {
 	{
 		getline(fichierPersonnages, ligne);
 		cout << "Ligne : " << ligne << endl;
+
+		int positionPointVirgule = ligne.find(";", 0); // find retourne la position du prochain ;
+		string valeur = ligne.substr(0, positionPointVirgule); // substr prend la position de départ + le nombre de char
+		cout << "valeur:" << valeur;
+		cout << endl;
 	}
 
 	return 0;
