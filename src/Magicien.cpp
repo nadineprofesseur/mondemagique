@@ -11,17 +11,22 @@
 namespace MondeMagique {
 
 Magicien::Magicien() {
+	this->arme = new BouleDeFeu(); // new retourne un type pointeur
 }
 Magicien::Magicien(string nom, int magie) : Personnage(nom)
 {
 	this->magie = magie;
+	this->arme = new BouleDeFeu(); // new retourne un type pointeur
 }
 Magicien::Magicien(string nom, int magie, int age) : Personnage(nom, age)
 {
 	this->magie = magie;
+	this->arme = new BouleDeFeu(); // new retourne un type pointeur
 }
 
 Magicien::~Magicien() {
+	delete this->arme; // liberer la memoire
+	// REGLE : un delete pour un new - si possible au meme niveau
 }
 
 

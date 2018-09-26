@@ -40,11 +40,11 @@ public:
 		this->nom = nom;
 	}
 
-	const Arme& getArme() const {
+	const Arme* getArme() const {
 		return arme;
 	}
 
-	void setArme(const Arme& arme) {
+	void setArme(const Arme* arme) {
 		this->arme = arme;
 	}
 
@@ -53,7 +53,7 @@ public:
 protected:
 	string nom;
 	int age;
-	Arme arme;
+	Arme * arme; // type pointeur
 	vector<Arme *> armesSecondaires; // les listes utilisent des pointeurs pour pouvoir stocker des objets derives de taille differentes
 	// sinon l'objet stocke dans la liste sera castÉ en objet parent (Arme) et perdra ses attributs derives - sa memoire supplementaire
 
