@@ -6,6 +6,7 @@
  */
 
 #include "Magicien.h"
+#include <sstream>
 
 namespace MondeMagique {
 
@@ -26,7 +27,9 @@ Magicien::~Magicien() {
 
 string Magicien::exporter()
 {
-	return "<Magicien><nom></nom><age></age><magie></magie></Magicien>";
+	stringstream xml;
+	xml << "<Magicien><nom></nom><age></age><magie></magie></Magicien>";
+	return xml.str();
 }
 
 

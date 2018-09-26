@@ -6,6 +6,7 @@
  */
 
 #include "Personnage.h"
+#include <sstream>
 
 namespace MondeMagique {
 
@@ -27,7 +28,9 @@ Personnage::~Personnage() {
 
 string Personnage::exporter()
 {
-	return "<Personnage><nom></nom><age></age></Personnage>";
+	stringstream xml;
+	xml << "<Personnage><nom></nom><age></age></Personnage>";
+	return xml.str();
 }
 
 

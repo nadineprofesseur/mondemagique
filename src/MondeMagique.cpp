@@ -46,20 +46,22 @@ int main() {
 		do
 		{
 			positionPointVirgule = ligne.find(";", dernierePosition); // find retourne la position du prochain ;
-			cout << " positionPointVirgule : " << positionPointVirgule;
+			//cout << " positionPointVirgule : " << positionPointVirgule;
 			string valeur = ligne.substr(dernierePosition, positionPointVirgule - dernierePosition); // substr prend la position de départ + le nombre de char
-			cout << " position : " << positionPointVirgule;
+			//cout << " position : " << positionPointVirgule;
 			cout << " valeur : " << valeur;
-			cout << " positionPointVirgule avant +1: " << positionPointVirgule;
+			//cout << " positionPointVirgule avant +1: " << positionPointVirgule;
 			dernierePosition = positionPointVirgule+1;
-			cout << " derniere position apres +1: " << dernierePosition;
-			cout << endl;
+			//cout << " derniere position apres +1: " << dernierePosition;
+			//cout << endl;
 		}
 		//while(ligne.length() > dernierePosition && dernierePosition > 0);
 		//while(string::npos != dernierePosition);
 		while(0 != dernierePosition); // 0 car -1 de find +1 = 0
 
 		cout << endl;
+
+
 	}
 
 	return 0;
