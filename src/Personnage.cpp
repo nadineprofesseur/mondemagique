@@ -29,7 +29,7 @@ Personnage::~Personnage() {
 string Personnage::exporter()
 {
 	stringstream xml;
-	xml << "<Personnage><nom></nom><age></age></Personnage>";
+	xml << "<Personnage><nom>"<< this->nom <<"</nom><age>"<<this->age<<"</age></Personnage>";
 	return xml.str();
 }
 

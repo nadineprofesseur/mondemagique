@@ -28,7 +28,7 @@ Magicien::~Magicien() {
 string Magicien::exporter()
 {
 	stringstream xml;
-	xml << "<Magicien><nom></nom><age></age><magie></magie></Magicien>";
+	xml << "<Magicien><nom>" << this->nom << "</nom><age>"<< this->age << "</age><magie>" << this->magie << "</magie></Magicien>";
 	return xml.str();
 }
 
