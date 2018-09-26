@@ -57,7 +57,7 @@ int main() {
 		}
 		//while(ligne.length() > dernierePosition && dernierePosition < 1000 && limite < 10);
 		//while(string::npos != dernierePosition && limite < 10); // ne marche pas a cause de bug dans find()
-		while(0 != dernierePosition && limite < 10); // ne marche pas a cause de bug dans find()
+		while(0 != dernierePosition && limite < 10); // 0 car -1 de find +1 = 0
 
 		cout << endl;
 	}
