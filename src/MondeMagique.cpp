@@ -30,8 +30,13 @@ int main() {
 	fichierPersonnages.open("data/Personnages.csv");
 
 	string ligne;
-	getline(fichierPersonnages, ligne);
-	cout << "Première ligne : " << ligne;
+	//getline(fichierPersonnages, ligne);
+	//cout << "Première ligne : " << ligne;
+	while(!fichierPersonnages.eof())
+	{
+		getline(fichierPersonnages, ligne);
+		cout << "Ligne : " << ligne << endl;
+	}
 
 	return 0;
 }
