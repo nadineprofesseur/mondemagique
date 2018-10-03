@@ -26,6 +26,10 @@ int main() {
 	personnage = new Magicien("Lolo", 100);
 	cout << personnage->exporter() << endl; // Quelle fonction ??? Magicien::exporter
 
+	ofstream fichierMonde;
+	fichierMonde.open("data/monde.xml");
+	fichierMonde << "test";
+
 	ifstream fichierPersonnages;
 	fichierPersonnages.open("data/Personnages.csv");
 
