@@ -44,7 +44,7 @@ public:
 		return arme;
 	}
 
-	void setArme(const Arme* arme) {
+	void setArme(Arme* arme) {
 		this->arme = arme;
 	}
 

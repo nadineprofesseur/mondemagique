@@ -6,6 +6,7 @@
  */
 
 #include "Magicien.h"
+#include "BouleDeFeu.h"
 #include <sstream>
 
 namespace MondeMagique {
