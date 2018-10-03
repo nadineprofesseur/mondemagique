@@ -28,7 +28,7 @@ int main() {
 
 	ofstream fichierMonde;
 	fichierMonde.open("data/monde.xml");
-	fichierMonde << "test";
+	fichierMonde << "<monde>" << personnage->exporter() << "</monde>";
 
 	ifstream fichierPersonnages;
 	fichierPersonnages.open("data/Personnages.csv");
