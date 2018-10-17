@@ -92,8 +92,9 @@ int main() {
 
 	Personnage* personnage;
 	char lettre;
+	bool boucleEnCours = true;
 
-	while(true)
+	while(boucleEnCours)
 	{
 		// faire un wait pour economiser les ressources
 		cout << "<monde>";
@@ -112,11 +113,12 @@ int main() {
 			lettre = cin.get();
 			cin.ignore();
 			//fflush(stdout);
-			cout << "La lettre tapee est" << lettre << endl;
+			cout << "La lettre tapee est " << lettre << endl;
+			if('q' == lettre || (char)27 == lettre) boucleEnCours = false; // pour quitter avec q ou autre touche selon ASCII
+
 		}
-
 	}
-
+	cout << "Merci d'avoir joué !" << endl;
 
 	return 0;
 }
