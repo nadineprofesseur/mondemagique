@@ -15,8 +15,7 @@ using namespace std;
 using namespace MondeMagique;
 
 int main() {
-	cout << "Bonjour" << endl; // prints !!!Hello World!!!
-
+/*
 	Personnage personnageSansPointeur;
 	Magicien objetMagicien("LaLa", 200);
 	personnageSansPointeur = (Personnage)objetMagicien;
@@ -28,7 +27,23 @@ int main() {
 
 	ofstream fichierMonde;
 	fichierMonde.open("data/monde.xml");
-	fichierMonde << "<monde>" << personnage->exporter() << "</monde>";
+	//fichierMonde << "<monde>" << personnage->exporter() << "</monde>";
+
+	Personnage* listePersonnages[5]; // 5 pointeurs de personnages
+	listePersonnages[0] = new Magicien("Loulou", 200);
+	listePersonnages[1] = new Magicien("Momo", 200);
+	listePersonnages[2] = new Magicien("Lulu", 200);
+	listePersonnages[3] = new Magicien("Yolo", 200);
+	listePersonnages[4] = new Magicien("Soso", 200);
+
+	fichierMonde << "<monde>";
+	for(int position = 0; position < 5; position++)
+	{
+		//fichierMonde << listePersonnages[position]->exporter();
+		personnage = listePersonnages[position];
+		fichierMonde << personnage->exporter();
+	}
+	fichierMonde << "</monde>";
 
 	ifstream fichierPersonnages;
 	fichierPersonnages.open("data/Personnages.csv");
@@ -65,8 +80,34 @@ int main() {
 
 		cout << endl;
 
+		*/
 
-	}
+	Personnage* listePersonnages[5]; // 5 pointeurs de personnages
+	listePersonnages[0] = new Magicien("Loulou", 200);
+	listePersonnages[1] = new Magicien("Momo", 200);
+	listePersonnages[2] = new Magicien("Lulu", 200);
+	listePersonnages[3] = new Magicien("Yolo", 200);
+	listePersonnages[4] = new Magicien("Soso", 200);
+
+
+
+		while(true)
+		{
+			// faire un wait pour economiser les ressources
+			Personnage* personnage;
+			cout << "<monde>";
+			for(int position = 0; position < 5; position++)
+			{
+				//fichierMonde << listePersonnages[position]->exporter();
+				personnage = listePersonnages[position];
+				cout << personnage->exporter();
+			}
+			cout << "</monde>";
+
+			cout << endl;
+		}
+
 
 	return 0;
 }
+
