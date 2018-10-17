@@ -90,22 +90,32 @@ int main() {
 	listePersonnages[4] = new Magicien("Soso", 200);
 
 
+	Personnage* personnage;
+	char lettre;
 
-		while(true)
+	while(true)
+	{
+		// faire un wait pour economiser les ressources
+		cout << "<monde>";
+		for(int position = 0; position < 5; position++)
 		{
-			// faire un wait pour economiser les ressources
-			Personnage* personnage;
-			cout << "<monde>";
-			for(int position = 0; position < 5; position++)
-			{
-				//fichierMonde << listePersonnages[position]->exporter();
-				personnage = listePersonnages[position];
-				cout << personnage->exporter();
-			}
-			cout << "</monde>";
-
-			cout << endl;
+			//fichierMonde << listePersonnages[position]->exporter();
+			personnage = listePersonnages[position];
+			cout << personnage->exporter();
 		}
+		cout << "</monde>";
+
+		cout << endl;
+
+		if (cin.rdbuf() && cin.rdbuf()->in_avail() >= 0)
+		{
+			lettre = cin.get();
+			cin.ignore();
+			//fflush(stdout);
+			cout << "La lettre tapee est" << lettre << endl;
+		}
+
+	}
 
 
 	return 0;
